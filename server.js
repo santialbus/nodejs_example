@@ -30,7 +30,7 @@ app.set('port', port);
 
 usersRoutes(app)
 
-const host = '192.168.0.15' || 'localhost';
+const host =  'localhost';
 
 server.listen(3333, host, function() {
     console.log('Aplicacion de NodeJs, puerto ' + port + ' process ' + process.pid + ' IP: ' + host +  ' Iniciada...')

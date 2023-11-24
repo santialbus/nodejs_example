@@ -19,7 +19,7 @@ ERRORES COMUNES:
 
 CURL POSTMAN DE ENDPOINTS:
 
-curl --location 'http://192.168.0.15:3333/api/users/create' \
+curl --location 'http://localhost:3333/api/users/create' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "email": "test@gmail.com",
@@ -28,3 +28,16 @@ curl --location 'http://192.168.0.15:3333/api/users/create' \
     "phone": "678987654",
     "password": "pass"
 }'
+
+Dependencias que se han instalado:
+
+"npm i.."
+
+bcryptjs
+cors
+express
+http
+morgan
+mysql
+passport
+passport-jwt
