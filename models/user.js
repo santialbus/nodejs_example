@@ -24,10 +24,10 @@ User.findById = (id, result) => {
         [id],
         (err, user) => {
             if(err) {
-                console.log('Error:', err)
+                console.log('FindById: Error:', err)
                 result(err, null)
             } else {
-                console.log('User obtenido: ', user)
+                console.log('FindById: User obtenido: ', user)
                 result(null, user)
             }
         }
@@ -42,6 +42,7 @@ User.findByEmail = (email, result) => {
             name,
             lastname,
             image,
+            phone,
             password
         FROM
             users
@@ -55,10 +56,10 @@ User.findByEmail = (email, result) => {
         [email],
         (err, user) => {
             if(err) {
-                console.log('Error:', err)
+                console.log('FidnbyEmail: Error:', err)
                 result(err, null)
             } else {
-                console.log('User obtenido: ', user[0])
+                console.log('FidnbyEmail: User obtenido: ', user[0])
                 result(null, user[0])
             }
         }

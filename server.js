@@ -36,7 +36,7 @@ app.set('port', port);
 
 usersRoutes(app)
 
-const host =  'localhost';
+const host =  '127.0.0.1';
 
 server.listen(3333, host, function() {
     console.log('Aplicacion de NodeJs, puerto ' + port + ' process ' + process.pid + ' IP: ' + host +  ' Iniciada...')

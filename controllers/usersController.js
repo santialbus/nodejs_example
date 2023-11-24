@@ -10,7 +10,7 @@ module.exports = {
         const password = req.body.password
 
         User.findByEmail(email, async (err, user) => {
-            
+
             if(err) {
                 return res.status(501).json({
                     success: false,
@@ -32,7 +32,7 @@ module.exports = {
                 const token = jwt.sign({id: user.id, email: user.email}, keys.secretOrKey, {})
 
                 const data = {
-                    id: user.id,
+                    id: `${user.id}`,
                     name: user.name,
                     lastname: user.lastname,
                     email: user.email,
@@ -42,7 +42,7 @@ module.exports = {
                 }
 
                 return res.status(201).json({
-                    succes: true,
+                    success: true,
                     message: 'El usuario fue autenticado',
                     data: data 
                 })
@@ -70,7 +70,7 @@ module.exports = {
             } 
 
             return res.status(201).json({
-                succes: true,
+                success: true,
                 message: 'Se registro completamente',
                 data: data //Id del nuevo usuario que se registro
             })
