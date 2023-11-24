@@ -41,3 +41,4 @@ morgan
 mysql
 passport
 passport-jwt
+jsonwebtoken
