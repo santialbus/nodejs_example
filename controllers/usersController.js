@@ -40,7 +40,8 @@ module.exports = {
                     email: user.email,
                     phone: user.phone,
                     image: user.image,
-                    session_token: `JWT ${token}`
+                    session_token: `JWT ${token}`,
+                    roles: JSON.parse(user.roles)
                 }
 
                 return res.status(201).json({
@@ -113,9 +114,10 @@ module.exports = {
             const token = jwt.sign({id: user.id, email: user.email}, keys.secretOrKey, {})
             user.token = session_token =  `JWT ${token}`;
 
+            //Creacion rol 3- cliente
             Rol.create(user.id, 3, (err,data) => {
                 if(err) {
-                    return res.status(501).json({
+                    return res.status(500).json({
                         success: false,
                         message: 'Hubo un error con el registro del rol',
                         error: err
@@ -128,11 +130,12 @@ module.exports = {
                 })
             });
 
+            /* Duplico dos veces este envio, por eso me peta
             return res.status(201).json({
                 success: true,
                 message: 'Se registro completamente',
                 data: user //Id del nuevo usuario que se registro
-            })
+            })*/
         })
     }
 }

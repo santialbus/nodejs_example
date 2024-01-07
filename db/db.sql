@@ -1,14 +1,14 @@
 
-Use nodejs;
+Use delivery;
 
-CREATE TABLE IF NOT EXISTS `NodeJs`.`users` (
+CREATE TABLE IF NOT EXISTS `delivery`.`users` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(45) NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `lastname` VARCHAR(60) NOT NULL,
   `phone` VARCHAR(90) NOT NULL,
   `image` VARCHAR(255) NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
   `created_at` TIMESTAMP NULL,
   `updated_at` TIMESTAMP NULL,
   PRIMARY KEY (`id`),

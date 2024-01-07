@@ -41,7 +41,8 @@ const upload = multer({
 
 usersRoutes(app, upload)
 
-const host =  '192.168.0.15' || '127.0.0.1';
+//Sustituit Ip por la ip del ordenador
+const host =  'PONER IP' || '127.0.0.1';
 
 server.listen(3333, host, function() {
     console.log('Aplicacion de NodeJs, puerto ' + port + ' process ' + process.pid + ' IP: ' + host +  ' Iniciada...')
